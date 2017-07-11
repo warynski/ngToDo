@@ -1,0 +1,37 @@
+<main>
+	<div class="well container">
+		<form>
+		  <div class="form-group">
+		    <input type="text" placeholder="Search" class="form-control" [(ngModel)]="term" name="term">
+        <a class="btn status-button" href="#" (click)="displayCat(1)">Show All</a>
+        <a class="btn status-button" href="#" (click)="displayCat(2)">Show Completed</a>
+        <a class="btn status-button" href="#" (click)="displayCat(3)">Show Queued </a>
+		  </div>
+		</form>
+	</div>
+	<div class="well container">
+		<form (submit)="addToDo()">
+		  <div class="form-group clearfix">
+		    <input type="text" placeholder="Add to list" class="form-control add-input pull-left" [(ngModel)]="inputText" name="inputText">
+        <button type="submit" class="btn btn-info pull-left submit-button">Submit</button>
+		  </div>
+		</form>
+	</div>
+	<div class="well container">
+		<ul class="list-group">		
+			<li class="list-group-item clearfix" *ngFor="let todo of todos | category:isDone | filter:term" [style.background-color]="todo.status ? '#5cb85c' : '#4e5d6c'">
+        <div class="pull-left custom-list">{{ todo.text }}</div>
+        <div *ngIf="todo.edit" class="clearfix">
+          <input class="form-control edit-input pull-left" [(ngModel)]="editInput" name="editInput">
+          <button class="btn btn-success pull-left edit-button" (click)="statusUpdate(todo)">Done</button>
+          <button class="btn btn-info pull-left edit-button" (click)="statusSave(todo)">Save</button>
+        </div>
+				<button class="btn btn-warning pull-right" (click)="onEdit(todo)" *ngIf="!todo.edit">Editor</button>
+				<button class="btn btn-danger pull-right" (click)="onDelete(todo)" *ngIf="!todo.edit">Delete</button>
+			</li>
+		</ul>
+	</div>
+</main>
+
+
+

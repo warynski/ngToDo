@@ -1,0 +1,24 @@
+.custom-list {
+    padding-top: 7px;
+}
+.edit-input {
+    max-width: 86%;
+}
+.add-input {
+    width: 85%;
+}
+.edit-button {
+    width: 7%;
+}
+.status-button {
+    color: #ebebeb;
+    background-color: #4e5d6c;
+    margin-top: 15px;
+    width: 33%;
+}
+.status-button:hover {
+    color: #000;
+}
+.submit-button {
+    width: 15%;
+}
