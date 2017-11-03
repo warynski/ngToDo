@@ -2,7 +2,7 @@
 
 Simple app that utilizes Angular.io.
 You can add, edit and update status of records. You can search through records, as well as you can get them filtered.
-Deployed demo:`http://bodep.pl/ngtodo/`.
+[Deployed demo](http://www.bodep.pl/ngtodo/)
 
 ## Development server
 
